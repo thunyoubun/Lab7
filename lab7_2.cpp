@@ -4,6 +4,17 @@
 using namespace std;
 
 //[Missing Code 1] Write definition of the function findGrade() here.
+char findGrade(float score)
+{
+	char grade;
+
+	grade = (score > 90) ? 'A' : (score > 75) ? 'B' : (score > 60) ? 'C' : (score > 45) ? 'D' : 'F';
+    
+	return grade;
+}
+
+
+
 
 int main(){
 	//Input the number of students
@@ -18,8 +29,11 @@ int main(){
 		cout << "Name of student " << i+1 << ": ";
 		cin.ignore();
 		//[Missing Code 2] Get name of the i-th students that may include whitespace.
+		getline(cin,name[i]);
+
 		cout << "Score of student " << i+1 << ": ";
 		//[Missing Code 3] Get score of the i-th students.
+		cin >> score[i];
 		i++;
 	}
 	
@@ -29,6 +43,7 @@ int main(){
 	cout << setw(25) << "Name" << setw(8) << "Score" << setw(8) << "Grade" << "\n";
 	cout << "---------------------------------------------\n";
 	while(i < N){
+		
 		cout << setw(25) << name[i] << setw(8) << score[i] << setw(8) << findGrade(score[i]) << "\n";
 		i++;
 	} 
